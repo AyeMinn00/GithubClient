@@ -1,4 +1,4 @@
-package com.ayeminoo.githubclient.di
+package com.ayeminoo.data.di
 
 import dagger.Module
 import dagger.Provides

@@ -1,4 +1,4 @@
-package com.ayeminoo.githubclient.di
+package com.ayeminoo.data.di
 
 import com.ayeminoo.data.users.remote.DefaultUsersDataSource
 import com.ayeminoo.data.users.remote.UsersDataSource

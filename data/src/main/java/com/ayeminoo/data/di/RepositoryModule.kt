@@ -1,4 +1,4 @@
-package com.ayeminoo.githubclient.di
+package com.ayeminoo.data.di
 
 import com.ayeminoo.data.users.repository.DefaultUsersRepository
 import com.ayeminoo.domain.users.UsersRepository

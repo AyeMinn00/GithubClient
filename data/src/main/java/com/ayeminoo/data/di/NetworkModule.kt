@@ -1,7 +1,7 @@
-package com.ayeminoo.githubclient.di
+package com.ayeminoo.data.di
 
-import com.ayeminoo.githubclient.BuildConfig
-import com.ayeminoo.githubclient.data.remote.service.GithubApi
+import com.ayeminoo.data.BuildConfig
+import com.ayeminoo.data.users.remote.service.GithubUsersApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -45,7 +45,7 @@ object NetworkModule {
     fun provideRetrofit(
         json: Json,
         okhttpCallFactory: dagger.Lazy<Call.Factory>,
-    ): GithubApi =
+    ): GithubUsersApi =
         Retrofit.Builder()
             .baseUrl("https://query1.finance.yahoo.com/")
             // We use callFactory lambda here with dagger.Lazy<Call.Factory>

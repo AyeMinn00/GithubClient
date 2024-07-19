@@ -9,7 +9,7 @@ plugins {
 
 android {
     namespace = "com.ayeminoo.githubclient"
-    compileSdk = 35
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.ayeminoo.githubclient"

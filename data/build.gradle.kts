@@ -8,7 +8,7 @@ plugins {
 
 android {
     namespace = "com.ayeminoo.data"
-    compileSdk = 35
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.ayeminoo.data"
@@ -35,6 +35,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = "17"
+    }
+    buildFeatures {
+        buildConfig = true
     }
 }
 
