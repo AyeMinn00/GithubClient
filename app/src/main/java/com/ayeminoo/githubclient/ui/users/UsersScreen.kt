@@ -1,8 +1,14 @@
 package com.ayeminoo.githubclient.ui.users
 
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults.topAppBarColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -21,16 +27,32 @@ fun UsersScreen(
     )
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun UsersScreen(
     users: List<User>,
     modifier: Modifier = Modifier
 ) {
-    LazyColumn(
-        modifier = modifier
-    ) {
-        items(users, key = { it.name }) { item ->
-            Text(text = item.name)
+    Scaffold(
+        modifier,
+        topBar = {
+            TopAppBar(
+                colors = topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.primaryContainer,
+                    titleContentColor = MaterialTheme.colorScheme.primary,
+                ),
+                title = {
+                    Text("Users")
+                }
+            )
+        }
+    ) { innerPadding ->
+        LazyColumn(
+            modifier = modifier.padding(innerPadding)
+        ) {
+            items(users, key = { it.name }) { item ->
+                UserCard(user = item)
+            }
         }
     }
 }

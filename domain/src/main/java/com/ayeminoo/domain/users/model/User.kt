@@ -1,5 +1,7 @@
 package com.ayeminoo.domain.users.model
 
 data class User(
-    val name : String
+    val id: Int,
+    val name: String,
+    val avatarUrl: String
 )

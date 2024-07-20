@@ -92,7 +92,11 @@ dependencies {
     androidTestImplementation(libs.hilt.android.testing)
     kaptAndroidTest(libs.hilt.android.compiler)
 
+    // Logger
     implementation(libs.timber)
+
+    // Image Loader
+    implementation(libs.coil.compose)
 
     // Testing
     testImplementation(libs.junit)

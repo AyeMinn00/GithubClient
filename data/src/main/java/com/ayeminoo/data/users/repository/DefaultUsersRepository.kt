@@ -24,7 +24,7 @@ class               DefaultUsersRepository
 ) : UsersRepository {
 
     override suspend fun getUsers(): Resource<List<User>> =         withContext(dispatcher) {
-        when (val result = usersDataSource.list()) {
+        when (val result = usersDataSource.list(0)) {
             is NetworkResult.Success -> {
                 Resource.Success(data = result.data.toDomain())
             }

@@ -5,6 +5,6 @@ import com.ayeminoo.data.users.remote.model.UserDetailDto
 import com.ayeminoo.data.users.remote.model.UserDto
 
 interface UsersDataSource {
-    suspend fun list(): NetworkResult<List<UserDto>>
+    suspend fun list(since: Int): NetworkResult<List<UserDto>>
     suspend fun getDetail(userName: String): NetworkResult<UserDetailDto>
 }

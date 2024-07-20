@@ -10,14 +10,13 @@ class DefaultUsersDataSource @Inject constructor(
     private val usersApi: GithubUsersApi
 ) : UsersDataSource {
 
-    override suspend fun list(): NetworkResult<List<UserDto>> {
-        return NetworkResult.Success(data = listOf(UserDto(name = "Aye")))
-//        return try {
-//            val response = usersApi.fetch()
-//            NetworkResult.Success(data = response)
-//        } catch (e: Exception) {
-//            NetworkResult.Error(e)
-//        }
+    override suspend fun list(since: Int): NetworkResult<List<UserDto>> {
+        return try {
+            val response = usersApi.fetch(since)
+            NetworkResult.Success(data = response)
+        } catch (e: Exception) {
+            NetworkResult.Error(e)
+        }
     }
 
     override suspend fun getDetail(userName: String): NetworkResult<UserDetailDto> {

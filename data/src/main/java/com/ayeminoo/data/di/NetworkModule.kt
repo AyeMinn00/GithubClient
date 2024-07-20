@@ -47,7 +47,7 @@ object NetworkModule {
         okhttpCallFactory: dagger.Lazy<Call.Factory>,
     ): GithubUsersApi =
         Retrofit.Builder()
-            .baseUrl("https://query1.finance.yahoo.com/")
+            .baseUrl("https://api.github.com/")
             // We use callFactory lambda here with dagger.Lazy<Call.Factory>
             // to prevent initializing OkHttp on the main thread.
             .callFactory { okhttpCallFactory.get().newCall(it) }
