@@ -5,4 +5,5 @@ plugins {
     alias(libs.plugins.hilt) apply false
     id("io.gitlab.arturbosch.detekt").version("1.23.3") apply false
     alias(libs.plugins.jetbrains.kotlin.jvm) apply false
+    alias(libs.plugins.android.library) apply false
 }

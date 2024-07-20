@@ -12,12 +12,18 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-class DefaultUsersRepository @Inject constructor(
-    private val usersDataSource: UsersDataSource,
-    @IoDispatcher private val dispatcher: CoroutineDispatcher
+class               DefaultUsersRepository
+
+
+
+@Inject constructor(
+    private val
+    usersDataSource: UsersDataSource,
+    @IoDispatcher private
+    val dispatcher: CoroutineDispatcher
 ) : UsersRepository {
 
-    override suspend fun getUsers(): Resource<List<User>> = withContext(dispatcher) {
+    override suspend fun getUsers(): Resource<List<User>> =         withContext(dispatcher) {
         when (val result = usersDataSource.list()) {
             is NetworkResult.Success -> {
                 Resource.Success(data = result.data.toDomain())
@@ -28,7 +34,6 @@ class DefaultUsersRepository @Inject constructor(
             }
         }
     }
-
     override suspend fun getUserDetail(userName: String): Resource<UserDetail> =
         withContext(dispatcher) {
             when (val result = usersDataSource.getDetail(userName)) {
