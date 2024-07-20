@@ -84,6 +84,10 @@ dependencies {
     // Material3
     implementation(libs.androidx.material3)
 
+    // Paging 3
+    implementation(libs.androidx.paging.runtime)
+    implementation(libs.androidx.paging.compose)
+
     // Hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)

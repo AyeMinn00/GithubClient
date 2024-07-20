@@ -9,13 +9,11 @@ import com.ayeminoo.domain.users.UsersRepository
 import com.ayeminoo.domain.users.model.User
 import com.ayeminoo.domain.users.model.UserDetail
 import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-class               DefaultUsersRepository
-
-
-
+class DefaultUsersRepository
 @Inject constructor(
     private val
     usersDataSource: UsersDataSource,
@@ -23,8 +21,9 @@ class               DefaultUsersRepository
     val dispatcher: CoroutineDispatcher
 ) : UsersRepository {
 
-    override suspend fun getUsers(): Resource<List<User>> =         withContext(dispatcher) {
-        when (val result = usersDataSource.list(0)) {
+    override suspend fun getUsers(since: Int): Resource<List<User>> = withContext(dispatcher) {
+        delay(5000)
+        when (val result = usersDataSource.list(since)) {
             is NetworkResult.Success -> {
                 Resource.Success(data = result.data.toDomain())
             }
@@ -34,6 +33,7 @@ class               DefaultUsersRepository
             }
         }
     }
+
     override suspend fun getUserDetail(userName: String): Resource<UserDetail> =
         withContext(dispatcher) {
             when (val result = usersDataSource.getDetail(userName)) {

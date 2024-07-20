@@ -2,6 +2,9 @@ package com.ayeminoo.githubclient.ui.users
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.cachedIn
 import com.ayeminoo.domain.Resource
 import com.ayeminoo.domain.users.UsersRepository
 import com.ayeminoo.domain.users.model.User
@@ -13,28 +16,18 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
 
+const val USERS_PAGE_SIZE = 30
+
 @HiltViewModel
 class UsersViewModel @Inject constructor(
     private val usersRepository: UsersRepository
 ) : ViewModel() {
 
-    private val _users = MutableStateFlow<List<User>>(emptyList())
-    val users = _users.asStateFlow()
+    val users = Pager(
+        config = PagingConfig(
+            pageSize = USERS_PAGE_SIZE,
+        ),
+        pagingSourceFactory = { UsersPagingSource(usersRepository) }
+    ).flow.cachedIn(viewModelScope)
 
-    init {
-        getUsers()
-    }
-
-    private fun getUsers() {
-        viewModelScope.launch {
-            when (val result = usersRepository.getUsers()) {
-                is Resource.Success -> {
-                    _users.update { result.data }
-                }
-                is Resource.Error -> {
-                    Timber.e("Error ${result.error.message}")
-                }
-            }
-        }
-    }
 }

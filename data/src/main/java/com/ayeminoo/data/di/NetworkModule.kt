@@ -33,7 +33,7 @@ object NetworkModule {
         if (BuildConfig.DEBUG) {
             client.addInterceptor(
                 HttpLoggingInterceptor().apply {
-                    level = HttpLoggingInterceptor.Level.BODY
+                    level = HttpLoggingInterceptor.Level.BASIC
                 }
             )
         }
