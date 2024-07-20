@@ -1,4 +1,4 @@
-package com.ayeminoo.data.di
+package com.ayeminoo.githubclient.di
 
 import com.ayeminoo.data.users.remote.DefaultUsersDataSource
 import com.ayeminoo.data.users.remote.UsersDataSource
@@ -15,5 +15,4 @@ interface DataSourceModule {
     @Binds
     @Singleton
     fun bindUsersDataSource(dataSource: DefaultUsersDataSource): UsersDataSource
-
 }

@@ -1,7 +1,7 @@
-package com.ayeminoo.data.di
+package com.ayeminoo.githubclient.di
 
-import com.ayeminoo.data.BuildConfig
 import com.ayeminoo.data.users.remote.service.GithubUsersApi
+import com.ayeminoo.githubclient.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

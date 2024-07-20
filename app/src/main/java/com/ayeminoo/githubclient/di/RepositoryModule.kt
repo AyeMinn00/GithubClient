@@ -1,4 +1,4 @@
-package com.ayeminoo.data.di
+package com.ayeminoo.githubclient.di
 
 import com.ayeminoo.data.users.repository.DefaultUsersRepository
 import com.ayeminoo.domain.users.UsersRepository
@@ -15,5 +15,4 @@ interface RepositoryModule {
     @Binds
     @Singleton
     fun bindUsersRepository(repo: DefaultUsersRepository): UsersRepository
-
 }

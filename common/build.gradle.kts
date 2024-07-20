@@ -1,11 +1,12 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
-    kotlin("plugin.serialization") version "2.0.0"
+    kotlin("kapt")
+    alias(libs.plugins.hilt)
 }
 
 android {
-    namespace = "com.ayeminoo.data"
+    namespace = "com.ayeminoo.common"
     compileSdk = 34
 
     defaultConfig {
@@ -31,23 +32,11 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-    buildFeatures {
-        buildConfig = true
-    }
 }
 
 dependencies {
-    implementation(project(":domain"))
-    implementation(project(":common"))
     implementation(libs.androidx.core.ktx)
-
-
-    implementation(libs.androidx.hilt.navigation.compose)
-
-    implementation(libs.timber)
-    implementation(libs.kotlinx.serialization.json)
-    implementation(libs.kotlin.faker)
-    implementation(libs.retrofit)
-    implementation(libs.retrofit.serialization)
-    implementation(libs.logging.interceptor)
+    // Hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
 }
