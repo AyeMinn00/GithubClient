@@ -41,13 +41,19 @@ dependencies {
     implementation(project(":common"))
     implementation(libs.androidx.core.ktx)
 
-
-    implementation(libs.androidx.hilt.navigation.compose)
-
     implementation(libs.timber)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.kotlin.faker)
     implementation(libs.retrofit)
     implementation(libs.retrofit.serialization)
     implementation(libs.logging.interceptor)
+
+    // Hilt
+    implementation(libs.hilt.android)
+
+    // Testing
+    testImplementation(libs.junit)
+    testImplementation(libs.mockwebserver)
+    testImplementation((libs.kotlinx.serialization.json))
+    testImplementation(libs.kotlinx.coroutines.test)
 }
