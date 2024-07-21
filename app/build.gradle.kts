@@ -68,6 +68,7 @@ android {
 dependencies {
     implementation(project(":domain"))
     implementation(project(":data"))
+    implementation(project(":common"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.runtime.compose)
@@ -84,6 +85,10 @@ dependencies {
     // Material3
     implementation(libs.androidx.material3)
 
+    // Paging 3
+    implementation(libs.androidx.paging.runtime)
+    implementation(libs.androidx.paging.compose)
+
     // Hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
@@ -94,6 +99,12 @@ dependencies {
 
     // Logger
     implementation(libs.timber)
+
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.kotlin.faker)
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.serialization)
+    implementation(libs.logging.interceptor)
 
     // Image Loader
     implementation(libs.coil.compose)

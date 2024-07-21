@@ -23,3 +23,4 @@ rootProject.name = "GithubClient"
 include(":app")
 include(":domain")
 include(":data")
+include(":common")

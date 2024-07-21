@@ -19,18 +19,3 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
-
--dontwarn com.fasterxml.jackson.core.JsonFactory
--dontwarn com.fasterxml.jackson.databind.ObjectMapper
--dontwarn com.fasterxml.jackson.module.kotlin.KotlinModule
-
-# Ignore JSR 305 annotations for embedding nullability information.
--dontwarn javax.annotation.**
-
-# Guarded by a NoClassDefFoundError try/catch and only used when on the classpath.
--dontwarn kotlin.Unit
-
-# With R8 full mode generic signatures are stripped for classes that are not
-# kept. Suspend functions are wrapped in continuations where the type argument
-# is used.
--keep,allowobfuscation,allowshrinking class kotlin.coroutines.Continuation
