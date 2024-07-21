@@ -20,7 +20,7 @@ class DefaultUsersRepository
     val dispatcher: CoroutineDispatcher
 ) : UsersRepository {
 
-    override suspend fun getUsers(since: Int): Resource<List<User>> = withContext(dispatcher) {
+    override suspend fun list(since: Int): Resource<List<User>> = withContext(dispatcher) {
         when (val result = usersDataSource.list(since)) {
             is NetworkResult.Success -> {
                 Resource.Success(data = result.data.toDomain())
@@ -32,7 +32,7 @@ class DefaultUsersRepository
         }
     }
 
-    override suspend fun getUserDetail(userName: String): Resource<UserDetail> =
+    override suspend fun getDetail(userName: String): Resource<UserDetail> =
         withContext(dispatcher) {
             when (val result = usersDataSource.getDetail(userName)) {
                 is NetworkResult.Success -> {

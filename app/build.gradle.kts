@@ -1,3 +1,6 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -6,6 +9,11 @@ plugins {
     kotlin("plugin.serialization") version "2.0.0"
     id("io.gitlab.arturbosch.detekt")
 }
+
+val prop = Properties().apply {
+    load(FileInputStream(File(rootProject.rootDir, "local.properties")))
+}
+val githubToken = prop.getProperty("github.token") ?: ""
 
 android {
     namespace = "com.ayeminoo.githubclient"
@@ -22,6 +30,8 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        buildConfigField("String", "GITHUB_TOKEN", githubToken)
     }
 
     buildTypes {
@@ -84,6 +94,7 @@ dependencies {
 
     // Material3
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.material.icons.extended)
 
     // Navigation
     implementation(libs.androidx.navigation.compose)

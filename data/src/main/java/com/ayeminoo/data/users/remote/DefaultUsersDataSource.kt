@@ -19,14 +19,13 @@ class DefaultUsersDataSource @Inject constructor(
         }
     }
 
-    override suspend fun getDetail(userName: String): NetworkResult<UserDetailDto> {
-        return NetworkResult.Success(data = UserDetailDto(name = "Aye"))
-//        return try {
-//            val response = usersApi.fetchDetail(userName)
-//            NetworkResult.Success(data = response)
-//        } catch (e: Exception) {
-//            NetworkResult.Error(e)
-//        }
+    override suspend fun getDetail(userName : String): NetworkResult<UserDetailDto> {
+        return try {
+            val response = usersApi.fetchDetail(userName)
+            NetworkResult.Success(data = response)
+        } catch (e: Exception) {
+            NetworkResult.Error(e)
+        }
     }
 
 }

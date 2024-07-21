@@ -1,6 +1,7 @@
 package com.ayeminoo.githubclient.di
 
 import com.ayeminoo.data.users.remote.service.GithubUsersApi
+import com.ayeminoo.data.users.remote.setToken
 import com.ayeminoo.githubclient.BuildConfig
 import dagger.Module
 import dagger.Provides
@@ -37,6 +38,7 @@ object NetworkModule {
                 }
             )
         }
+        client.setToken(BuildConfig.GITHUB_TOKEN)
         return client.build()
     }
 

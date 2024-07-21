@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -28,9 +29,10 @@ fun UserCard(
 ) {
     Row(
         modifier
+            .clip(RoundedCornerShape(4.dp))
+            .clickable { onClick(user) }
             .padding(8.dp)
-            .fillMaxWidth()
-            .clickable { onClick(user) },
+            .fillMaxWidth(),
         horizontalArrangement = Arrangement.spacedBy(8.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
@@ -54,7 +56,7 @@ fun UserCard(
 
 @Preview(showSystemUi = true, showBackground = true)
 @Composable
-fun UserCard_Preview(modifier: Modifier = Modifier) {
+fun UserCard_Preview() {
     GithubClientTheme {
         UserCard(
             user = User(

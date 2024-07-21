@@ -17,7 +17,7 @@ class UsersPagingSource(
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, User> {
         val currentPage = params.key ?: 0
-        return when (val result = usersRepository.getUsers(currentPage)) {
+        return when (val result = usersRepository.list(currentPage)) {
             is Resource.Success -> {
                 val nextKey = if (result.data.isEmpty()) {
                     null

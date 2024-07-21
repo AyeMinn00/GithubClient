@@ -54,13 +54,13 @@ fun UsersScreen(
         modifier,
         topBar = {
             TopAppBar(
-                colors = topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer,
-                    titleContentColor = MaterialTheme.colorScheme.primary,
-                ),
                 title = {
-                    Text("Users")
-                }
+                    Text("Users", style = MaterialTheme.typography.titleLarge)
+                },
+                colors = topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.primary,
+                    titleContentColor = MaterialTheme.colorScheme.primaryContainer,
+                )
             )
         }
     ) { innerPadding ->
@@ -144,7 +144,7 @@ fun InitialLoadingError(
 
 @Preview(showSystemUi = true, showBackground = true)
 @Composable
-fun InitialLoadingError_Preview(modifier: Modifier = Modifier) {
+fun InitialLoadingError_Preview() {
     GithubClientTheme {
         InitialLoadingError(
             msg = "Error",

@@ -16,7 +16,7 @@ fun NavGraphBuilder.usersRoute(
             viewModel = hiltViewModel(),
             onUserClick = { usr ->
                 navHostController.navigate(
-                    route = UserDetailDestination.getAddress(userId = usr.id)
+                    route = UserDetailDestination.getAddress(userName = usr.name)
                 )
             }
         )
