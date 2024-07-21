@@ -133,6 +133,7 @@ dependencies {
     testImplementation((libs.kotlinx.serialization.json))
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.turbine)
+    testImplementation(libs.mockk)
 
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.3")
     detektPlugins("com.twitter.compose.rules:detekt:0.0.26")

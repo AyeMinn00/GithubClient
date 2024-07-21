@@ -56,4 +56,5 @@ dependencies {
     testImplementation(libs.mockwebserver)
     testImplementation((libs.kotlinx.serialization.json))
     testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.mockk)
 }
