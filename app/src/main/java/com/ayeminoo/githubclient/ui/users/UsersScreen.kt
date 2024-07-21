@@ -32,11 +32,13 @@ import com.ayeminoo.githubclient.theme.GithubClientTheme
 @Composable
 fun UsersScreen(
     viewModel: UsersViewModel,
+    onUserClick: (User) -> Unit,
     modifier: Modifier = Modifier
 ) {
     val users = viewModel.users.collectAsLazyPagingItems()
     UsersScreen(
         users = users,
+        onUserClick = onUserClick,
         modifier
     )
 }
@@ -45,6 +47,7 @@ fun UsersScreen(
 @Composable
 fun UsersScreen(
     users: LazyPagingItems<User>,
+    onUserClick: (User) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Scaffold(
@@ -62,11 +65,15 @@ fun UsersScreen(
         }
     ) { innerPadding ->
         LazyColumn(
-            modifier = modifier.padding(innerPadding)
+            modifier = Modifier.padding(innerPadding)
         ) {
             items(count = users.itemCount, key = { users[it]?.id ?: it }) {
                 users[it]?.let { usr ->
-                    UserCard(user = usr)
+                    UserCard(
+                        user = usr,
+                        onClick = onUserClick,
+                        modifier = Modifier.fillMaxWidth()
+                    )
                 }
             }
             users.apply {

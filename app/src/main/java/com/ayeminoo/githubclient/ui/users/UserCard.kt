@@ -1,5 +1,6 @@
 package com.ayeminoo.githubclient.ui.users
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -22,12 +23,14 @@ import com.ayeminoo.githubclient.theme.GithubClientTheme
 @Composable
 fun UserCard(
     user: User,
+    onClick: (User) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Row(
         modifier
             .padding(8.dp)
-            .fillMaxWidth(),
+            .fillMaxWidth()
+            .clickable { onClick(user) },
         horizontalArrangement = Arrangement.spacedBy(8.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
@@ -58,7 +61,8 @@ fun UserCard_Preview(modifier: Modifier = Modifier) {
                 id = 6973,
                 name = "Avis Mays",
                 avatarUrl = ""
-            )
+            ),
+            onClick = {}
         )
     }
 }
