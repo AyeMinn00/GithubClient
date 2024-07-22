@@ -39,6 +39,8 @@ and safe management of one-shot operations as well as building and consuming str
 
 Follows [Coroutines Best Practices in Android](https://developer.android.com/kotlin/coroutines/coroutines-best-practices).
 
+Colors are generated using [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/)
+
 [Detekt](https://detekt.dev/) is used as a  static code analyzer with a Formatting Plugin which wraps **Ktlint**.
 
 [Twitter Compose Rules](https://twitter.github.io/compose-rules/) is used as a set of custom ktlint rules to ensure that the composables don't fall into common pitfalls.
