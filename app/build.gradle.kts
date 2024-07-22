@@ -26,7 +26,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.ayeminoo.githubclient.app.HiltTestRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -133,6 +133,8 @@ dependencies {
     testImplementation((libs.kotlinx.serialization.json))
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.turbine)
+    testImplementation(libs.mockk)
+    androidTestImplementation(libs.androidx.navigation.testing)
 
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.3")
     detektPlugins("com.twitter.compose.rules:detekt:0.0.26")
