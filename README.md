@@ -4,7 +4,7 @@
 
 The app is written entirely in Kotlin and uses the Gradle build system.
 
-Before Development, Please add Githu Token in ```local.properties```. <br>
+Before Development, Please add Github Token in ```local.properties```. <br>
 For example, ```github.token="YOUR_TOKEN"``` <br>
 According to Github api doc, using Token reduces rate limiting.
 
@@ -18,8 +18,8 @@ from Activities and Composable and moved to
 Data is observed using
 [Kotlin Flows](https://developer.android.com/kotlin/flow/stateflow-and-sharedflow)
 
-The **Repository** layer handles data operations.
-Since the project is very small, **Domain** layer is omitted.
+The ```Repository``` layer handles data operations.
+Since the project is very small, ```Domain``` layer is omitted.
 
 [Retrofit](https://square.github.io/retrofit/) & [OkHttp](https://square.github.io/okhttp/) are used to fetch data from server.
 
