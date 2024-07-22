@@ -37,6 +37,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
 import com.ayeminoo.domain.users.model.UserDetail
 import com.ayeminoo.githubclient.R
+import com.ayeminoo.githubclient.constants.TestTags.NAVIGATE_UP
 import com.ayeminoo.githubclient.theme.GithubClientTheme
 import com.ayeminoo.githubclient.ui.users.Loading
 import com.ayeminoo.githubclient.ui.users.LoadingError
@@ -80,7 +81,7 @@ fun UserDetailScreen(
             navigationIcon = {
                 IconButton(
                     onClick = onNavigateUp,
-                    modifier = Modifier.testTag("navigateBack")
+                    modifier = Modifier.testTag(NAVIGATE_UP)
                 ) {
                     Icon(
                         imageVector = Icons.AutoMirrored.Filled.ArrowBack,

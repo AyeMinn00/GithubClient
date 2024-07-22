@@ -135,6 +135,8 @@ dependencies {
     testImplementation(libs.turbine)
     testImplementation(libs.mockk)
     androidTestImplementation(libs.androidx.navigation.testing)
+    testImplementation(libs.androidx.paging.common)
+    implementation(libs.androidx.paging.testing)
 
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.3")
     detektPlugins("com.twitter.compose.rules:detekt:0.0.26")
