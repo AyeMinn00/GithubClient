@@ -9,6 +9,7 @@ import androidx.compose.ui.test.performClick
 import androidx.navigation.compose.ComposeNavigator
 import androidx.navigation.testing.TestNavHostController
 import com.ayeminoo.githubclient.HiltActivity
+import com.ayeminoo.githubclient.constants.TestTags.NAVIGATE_UP
 import com.ayeminoo.githubclient.navigation.destination.UserDetailDestination
 import com.ayeminoo.githubclient.navigation.destination.UsersDestination
 import com.ayeminoo.githubclient.utils.assertCurrentRouteName
@@ -54,13 +55,13 @@ class GithubClientNavHostKtTest {
     }
 
     @Test
-    fun navHost_ClickOnNavigateUpIcon_NavigateBack(){
+    fun navHost_ClickOnNavigateUpIcon_NavigateBack() {
         // User1 is provided from FakeUsesRepository
         composeTestRule.onNodeWithText("User1")
             .assertIsDisplayed()
         composeTestRule.onNodeWithText("User1")
             .performClick()
-        composeTestRule.onNodeWithTag("navigateBack")
+        composeTestRule.onNodeWithTag(NAVIGATE_UP)
             .performClick()
         navController.assertCurrentRouteName(UsersDestination.route)
     }

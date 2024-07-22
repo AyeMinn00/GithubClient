@@ -1,4 +1,4 @@
-package com.ayeminoo.githubclient.ui.users
+package com.ayeminoo.githubclient.data
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState

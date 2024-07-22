@@ -20,7 +20,9 @@ mockk = "1.13.12"
 mockwebserver = "4.12.0"
 navigationCompose = "2.7.7"
 navigationTesting = "2.7.7"
+pagingCommon = "3.3.0"
 pagingRuntime = "3.3.0"
+pagingTesting = "3.3.0"
 retrofit = "2.11.0"
 timber = "5.0.1"
 turbine = "1.1.0"
@@ -38,8 +40,10 @@ androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", versi
 androidx-material-icons-extended = { module = "androidx.compose.material:material-icons-extended" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
 androidx-navigation-testing = { module = "androidx.navigation:navigation-testing", version.ref = "navigationTesting" }
+androidx-paging-common = { module = "androidx.paging:paging-common", version.ref = "pagingCommon" }
 androidx-paging-compose = { module = "androidx.paging:paging-compose", version.ref = "pagingRuntime" }
 androidx-paging-runtime = { module = "androidx.paging:paging-runtime", version.ref = "pagingRuntime" }
+androidx-paging-testing = { module = "androidx.paging:paging-testing", version.ref = "pagingTesting" }
 androidx-ui = { group = "androidx.compose.ui", name = "ui" }
 androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
