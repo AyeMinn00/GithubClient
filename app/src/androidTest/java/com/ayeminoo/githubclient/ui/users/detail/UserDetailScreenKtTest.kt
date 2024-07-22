@@ -1,9 +1,7 @@
-package com.ayeminoo.githubclient.ui.users
+package com.ayeminoo.githubclient.ui.users.detail
 
-import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
-import androidx.compose.ui.test.onNodeWithText
-import androidx.paging.compose.collectAsLazyPagingItems
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.ayeminoo.domain.users.UsersRepository
 import com.ayeminoo.githubclient.HiltActivity
 import dagger.hilt.android.testing.HiltAndroidRule
@@ -14,8 +12,9 @@ import org.junit.Rule
 import org.junit.Test
 import javax.inject.Inject
 
+
 @HiltAndroidTest
-class UsersScreenKtTest {
+class UserDetailScreenKtTest {
 
     @get:Rule(order = 0)
     var hiltRule = HiltAndroidRule(this)
@@ -26,24 +25,23 @@ class UsersScreenKtTest {
     @Inject
     lateinit var usersRepository: UsersRepository
 
-    private lateinit var viewModel: UsersViewModel
+    private lateinit var viewModel: UserDetailViewModel
 
     @Before
     fun init() {
         hiltRule.inject()
-        viewModel = UsersViewModel(usersRepository)
+        viewModel = UserDetailViewModel(usersRepository)
     }
 
     @Test
-    fun usersScreen_VerifyUsersLoading() = runTest {
+    fun userDetailScreen_VerifyUserDetailLoading() = runTest {
         composeTestRule.setContent {
-            UsersScreen(
-                users = viewModel.users.collectAsLazyPagingItems(),
-                onUserClick = {}
+            UserDetailScreen(
+                uiState = viewModel.userDetail.collectAsStateWithLifecycle().value,
+                onRetry = {},
+                onNavigateUp = {}
             )
         }
-        composeTestRule.onNodeWithText("User1") // User1 is from FakeRepository
-            .assertIsDisplayed()
     }
 
 }
