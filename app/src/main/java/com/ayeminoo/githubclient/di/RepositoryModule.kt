@@ -1,6 +1,8 @@
 package com.ayeminoo.githubclient.di
 
+import com.ayeminoo.data.genie.DummyProductRepository
 import com.ayeminoo.data.users.repository.DefaultUsersRepository
+import com.ayeminoo.domain.genie.ProductRepository
 import com.ayeminoo.domain.users.UsersRepository
 import dagger.Binds
 import dagger.Module
@@ -15,4 +17,8 @@ interface RepositoryModule {
     @Binds
     @Singleton
     fun bindUsersRepository(repo: DefaultUsersRepository): UsersRepository
+
+    @Binds
+    @Singleton
+    fun bindProductRepository(repo: DummyProductRepository) : ProductRepository
 }

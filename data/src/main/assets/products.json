@@ -1,0 +1,159 @@
+[
+  {
+    "id": 1,
+    "title": "Samsung Galaxy S23",
+    "description": "The latest Samsung smartphone with advanced features.",
+    "category": "Smartphones",
+    "estimate_cash": 4500,
+    "price_unit": "Kyat",
+    "available_unit": 150,
+    "tag": [
+      "phone",
+      "samsung"
+    ],
+    "favorite": true,
+    "image": "https://media.istockphoto.com/id/531614389/photo/new-smartphone.webp?a=1&b=1&s=612x612&w=0&k=20&c=ui4WkyB1JjsWfdTE9iaIiindLABepemgevTAZh50C7c="
+  },
+  {
+    "id": 2,
+    "title": "Apple MacBook Pro",
+    "description": "High-performance laptop with M1 chip for professionals.",
+    "category": "Laptops",
+    "estimate_cash": 8000,
+    "price_unit": "Baht",
+    "available_unit": 50,
+    "tag": [
+      "laptop",
+      "apple",
+      "macbook"
+    ],
+    "favorite": false,
+    "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": 3,
+    "title": "Sony WH-1000XM5",
+    "description": "Noise-cancelling wireless headphones with superior sound quality.",
+    "category": "Accessories",
+    "estimate_cash": 2000,
+    "price_unit": "Kyat",
+    "available_unit": 300,
+    "tag": [
+      "headphones",
+      "sony",
+      "audio"
+    ],
+    "favorite": true,
+    "image": "https://images.unsplash.com/photo-1513599898445-1c34777500ab?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8U29ueSUyMFdIJTIwMTAwMFhNNXxlbnwwfHwwfHx8MA%3D%3D"
+  },
+  {
+    "id": 4,
+    "title": "Nike Air Max 270",
+    "description": "Stylish and comfortable sneakers for everyday wear.",
+    "category": "Footwear",
+    "estimate_cash": 1500,
+    "price_unit": "Baht",
+    "available_unit": 80,
+    "tag": [
+      "footwear",
+      "sneakers",
+      "nike"
+    ],
+    "favorite": false
+  },
+  {
+    "id": 5,
+    "title": "Sony A7 III Camera",
+    "description": "Full-frame mirrorless camera for professional photography.",
+    "category": "Cameras",
+    "estimate_cash": 7000,
+    "price_unit": "Kyat",
+    "available_unit": 25,
+    "tag": [
+      "camera",
+      "sony",
+      "photography"
+    ],
+    "favorite": true,
+    "image": "https://plus.unsplash.com/premium_photo-1710961233810-5350d81d4b20?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8U29ueSUyMEE3JTIwSUlJJTIwQ2FtZXJhfGVufDB8fDB8fHww"
+  },
+  {
+    "id": 6,
+    "title": "Dyson Air Purifier",
+    "description": "Advanced air purifier for a cleaner, healthier home.",
+    "category": "Home Appliances",
+    "estimate_cash": 3000,
+    "price_unit": "Kyat",
+    "available_unit": 40,
+    "tag": [
+      "home",
+      "appliances",
+      "dyson"
+    ],
+    "favorite": false,
+    "image": "https://plus.unsplash.com/premium_photo-1668365725809-71d571a981ca?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fER5c29uJTIwQWlyJTIwUHVyaWZpZXJ8ZW58MHx8MHx8fDA%3D"
+  },
+  {
+    "id": 7,
+    "title": "Adidas Ultraboost 21",
+    "description": "High-performance running shoes designed for comfort and energy return.",
+    "category": "Sportswear",
+    "estimate_cash": 1800,
+    "price_unit": "Baht",
+    "available_unit": 60,
+    "tag": [
+      "sports",
+      "footwear",
+      "adidas"
+    ],
+    "favorite": true
+  },
+  {
+    "id": 8,
+    "title": "Bose SoundLink Speaker",
+    "description": "Portable Bluetooth speaker with excellent sound quality.",
+    "category": "Audio",
+    "estimate_cash": 2200,
+    "price_unit": "Kyat",
+    "available_unit": 90,
+    "tag": [
+      "speaker",
+      "bose",
+      "audio"
+    ],
+    "favorite": false,
+    "image": "https://images.unsplash.com/photo-1510157059722-9c3c2175ed1f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Qm9zZSUyMFNvdW5kTGluayUyMFNwZWFrZXJ8ZW58MHx8MHx8fDA%3D"
+  },
+  {
+    "id": 9,
+    "title": "Dell XPS 13",
+    "description": "Ultra-thin and light laptop with a stunning display.",
+    "category": "Laptops",
+    "estimate_cash": 6500,
+    "price_unit": "Kyat",
+    "available_unit": 45,
+    "tag": [
+      "laptop",
+      "dell",
+      "xps"
+    ],
+    "favorite": true,
+    "image": "https://media.istockphoto.com/id/1078353318/photo/office-work-desk.webp?a=1&b=1&s=612x612&w=0&k=20&c=hc5-lsoCduwKzAoj13zpZWbIjdovebD-a8CMNp-NXaQ="
+  },
+  {
+    "id": 10,
+    "title": "GoPro HERO9",
+    "description": "Waterproof action camera for extreme sports and adventures.",
+    "category": "Cameras",
+    "estimate_cash": 3500,
+    "price_unit": "Baht",
+    "available_unit": 70,
+    "tag": [
+      "camera",
+      "gopro",
+      "action"
+    ],
+    "favorite": false,
+    "image": "https://media.istockphoto.com/id/1489367776/photo/photographer-taking-photos-with-a-digital-slr-camera-in-the-forest-camera-in-hand-with-live.webp?a=1&b=1&s=612x612&w=0&k=20&c=Q9o93tzc79gtAJXciKMQmdI_HvA4BcnCtkfIuhHyB5Q="
+  }
+]
