@@ -4,12 +4,13 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import com.ayeminoo.githubclient.navigation.composables.addProductRoute
 import com.ayeminoo.githubclient.navigation.composables.genieHomeRoute
 import com.ayeminoo.githubclient.navigation.composables.productDetailRoute
+import com.ayeminoo.githubclient.navigation.composables.profileRoute
 import com.ayeminoo.githubclient.navigation.composables.userDetailRoute
 import com.ayeminoo.githubclient.navigation.composables.usersRoute
 import com.ayeminoo.githubclient.navigation.destination.ProductsDestination
-import com.ayeminoo.githubclient.navigation.destination.UsersDestination
 
 @Composable
 fun GithubClientNavHost(
@@ -23,5 +24,7 @@ fun GithubClientNavHost(
         userDetailRoute(navHostController)
         genieHomeRoute(navHostController)
         productDetailRoute(navHostController)
+        addProductRoute(navHostController)
+        profileRoute(navHostController)
     }
 }

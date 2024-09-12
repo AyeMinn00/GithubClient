@@ -1,10 +1,11 @@
 package com.ayeminoo.data.genie
 
+import com.ayeminoo.domain.genie.Product
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Product(
+data class ProductDto(
     @SerialName("id")
     val id: Int,
     @SerialName("title")
@@ -27,8 +28,8 @@ data class Product(
     val image: String? = null
 )
 
-fun List<Product>.toDomain() = map { item ->
-    com.ayeminoo.domain.genie.Product(
+fun List<ProductDto>.toDomain() = map { item ->
+    Product(
         id = item.id,
         title = item.title,
         description = item.description,

@@ -12,18 +12,22 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ProductsViewModel @Inject constructor(
+class ProductDetailViewModel @Inject constructor(
     private val repo: ProductRepository
 ) : ViewModel() {
 
-    private val _products = MutableStateFlow<GenieUiState>(GenieUiState.Loading)
-    val products = _products.asStateFlow()
+    private val _product = MutableStateFlow<ProductDetailUiState>(ProductDetailUiState.Loading)
+    val product = _product.asStateFlow()
 
-    init {
+    fun getDetail(id: Int) {
         viewModelScope.launch {
-            when (val data = repo.list()) {
+            when (val result = repo.detail(id)) {
                 is Resource.Success -> {
-                    _products.update { GenieUiState.Data(data = data.data) }
+                    _product.update {
+                        ProductDetailUiState.Data(
+                            data = result.data
+                        )
+                    }
                 }
 
                 is Resource.Error -> Unit

@@ -41,7 +41,7 @@ class DummyProductRepository @Inject constructor(
         val json = AssetUtil.readTextFileFromAssets(context, "products.json")
             ?: return
         val parser = Json { ignoreUnknownKeys = true }
-        val prd = parser.decodeFromString<List<com.ayeminoo.data.genie.Product>>(json)
+        val prd = parser.decodeFromString<List<ProductDto>>(json)
         products = prd.toDomain()
     }
 

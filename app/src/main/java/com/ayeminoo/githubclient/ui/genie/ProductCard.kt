@@ -35,7 +35,7 @@ fun ProductCard(
 ) {
     Column(
         modifier = modifier
-            .padding(vertical = 8.dp, horizontal = 16.dp),
+            .padding(vertical = 8.dp, horizontal = 12.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         Row(
@@ -50,7 +50,7 @@ fun ProductCard(
                     modifier = Modifier
                         .size(50.dp)
                         .border(
-                            width = 1.dp,
+                            width = 0.5.dp,
                             color = MaterialTheme.colorScheme.secondary,
                             shape = MaterialTheme.shapes.extraSmall
                         )
@@ -99,7 +99,9 @@ fun ProductCard(
 @Preview(
     device = "id:pixel_3",
     uiMode = Configuration.UI_MODE_NIGHT_NO or Configuration.UI_MODE_TYPE_NORMAL,
-    wallpaper = Wallpapers.NONE, showSystemUi = true, showBackground = true
+    wallpaper = Wallpapers.NONE,
+    showSystemUi = true,
+    showBackground = true
 )
 @Composable
 private fun ProductCardPreview() {

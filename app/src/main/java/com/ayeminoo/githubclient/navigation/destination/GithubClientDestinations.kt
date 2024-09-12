@@ -20,3 +20,6 @@ object ProductDetailDestination : Destination(
 ) {
     fun getAddress(id: Int) = address(args = mapOf(ARG_PRODUCT_ID to id))
 }
+
+object AddProductDestination : Destination(path = "add_product")
+object ProfileDestination : Destination(path = "profile")

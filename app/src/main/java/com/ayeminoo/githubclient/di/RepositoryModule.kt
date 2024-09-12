@@ -20,5 +20,5 @@ interface RepositoryModule {
 
     @Binds
     @Singleton
-    fun bindProductRepository(repo: DummyProductRepository) : ProductRepository
+    fun bindProductRepository(repo: DummyProductRepository): ProductRepository
 }
